@@ -263,7 +263,7 @@
     // server status ping
     async function checkServerStatus() {
       try {
-        await fetch('http://localhost:3000/analyze', { method: 'OPTIONS' });
+        await fetch('https://beauty-backend.onrender.com/analyze', { method: 'OPTIONS' });
         updateServerStatus('connected', '🟢 Claude AI Connected');
       } catch (e) {
         updateServerStatus('demo', '🟡 Demo Mode (Start server: node server.js)');
@@ -382,7 +382,7 @@
 
       try {
         const base64Image = await convertImageToBase64(window.uploadedImage);
-        const resp = await fetch('http://localhost:3000/analyze', {
+        const resp = await fetch('https://beauty-backend.onrender.com/analyze', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ image: base64Image })
@@ -431,3 +431,4 @@
   </script>
 </body>
 </html>
+
