@@ -153,7 +153,7 @@
           </div>
         </div>
         <div class="product-card">
-          <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1571781926291-c477ebfd024b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');"></div>
+          <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1571781926291-c477ebfd024b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');"></div>
           <div class="product-content">
             <h3>Gentle Exfoliating Cleanser</h3>
             <p>A mild yet effective cleanser with natural enzymes that gently removes impurities while maintaining your skin's natural barrier.</p>
@@ -263,7 +263,7 @@
     // server status ping
     async function checkServerStatus() {
       try {
-        await fetch('https://beauty-backend.onrender.com/analyze', { method: 'OPTIONS' });
+        await fetch('https://beauty-backend-x7do.onrender.com/analyze', { method: 'OPTIONS' });
         updateServerStatus('connected', '🟢 Claude AI Connected');
       } catch (e) {
         updateServerStatus('demo', '🟡 Demo Mode (Start server: node server.js)');
@@ -382,7 +382,7 @@
 
       try {
         const base64Image = await convertImageToBase64(window.uploadedImage);
-        const resp = await fetch('https://beauty-backend.onrender.com/analyze', {
+        const resp = await fetch('https://beauty-backend-x7do.onrender.com/analyze', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ image: base64Image })
